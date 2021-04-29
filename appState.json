@@ -38,10 +38,10 @@
           "layers": []
         },
         "cursor": {
-          "lineNumber": 14,
-          "column": 15
+          "lineNumber": 7,
+          "column": 56
         },
-        "lastUpdated": 1619679821656
+        "lastUpdated": 1619680492906
       },
       "4a2466e7-d4da-40a4-b57c-d0cb6aa6b0b4": {
         "id": "4a2466e7-d4da-40a4-b57c-d0cb6aa6b0b4",
@@ -89,17 +89,17 @@
           "layers": []
         },
         "cursor": {
-          "lineNumber": 14,
-          "column": 15
+          "lineNumber": 20,
+          "column": 17
         },
-        "lastUpdated": 1619679717712
+        "lastUpdated": 1619683266813
       }
     },
     "openFiles": [
       "b25cfaa4-4d44-4464-83f9-5b8ff3d06549",
       "ef6a3550-9c0a-44a1-a422-dbb21d93168c"
     ],
-    "currentFileId": "b25cfaa4-4d44-4464-83f9-5b8ff3d06549",
+    "currentFileId": "ef6a3550-9c0a-44a1-a422-dbb21d93168c",
     "resources": {
       "rds-authDatabase": {
         "name": "rds-authDatabase",
@@ -221,7 +221,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1619679944638
+    "lastSave": 1619683354440
   },
   "VCS_STATE": {
     "provider": "GitHub",
