@@ -1,0 +1,233 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "6b62ae10-8931-47a3-baa6-958f52e066f8": {
+        "id": "6b62ae10-8931-47a3-baa6-958f52e066f8",
+        "parent": null,
+        "name": "simple-authenticator-sigma-sample",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "b25cfaa4-4d44-4464-83f9-5b8ff3d06549",
+          "4a2466e7-d4da-40a4-b57c-d0cb6aa6b0b4",
+          "ef6a3550-9c0a-44a1-a422-dbb21d93168c"
+        ],
+        "isRemovable": false,
+        "filePath": "simple-authenticator-sigma-sample"
+      },
+      "b25cfaa4-4d44-4464-83f9-5b8ff3d06549": {
+        "id": "b25cfaa4-4d44-4464-83f9-5b8ff3d06549",
+        "parent": "6b62ae10-8931-47a3-baa6-958f52e066f8",
+        "name": "signup-lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "simple-authenticator-sigma-sample/signup-lambda.js",
+        "triggers": [
+          {
+            "resourceName": "apigauthApisignuppost",
+            "config": {}
+          }
+        ],
+        "config": {
+          "runtime": "nodejs10.x",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "cursor": {
+          "lineNumber": 14,
+          "column": 15
+        },
+        "lastUpdated": 1619679821656
+      },
+      "4a2466e7-d4da-40a4-b57c-d0cb6aa6b0b4": {
+        "id": "4a2466e7-d4da-40a4-b57c-d0cb6aa6b0b4",
+        "parent": "6b62ae10-8931-47a3-baa6-958f52e066f8",
+        "name": "ConnectionManager.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "simple-authenticator-sigma-sample/ConnectionManager.js",
+        "triggers": []
+      },
+      "ef6a3550-9c0a-44a1-a422-dbb21d93168c": {
+        "id": "ef6a3550-9c0a-44a1-a422-dbb21d93168c",
+        "parent": "6b62ae10-8931-47a3-baa6-958f52e066f8",
+        "name": "signin-lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "simple-authenticator-sigma-sample/signin-lambda.js",
+        "triggers": [
+          {
+            "resourceName": "apigauthApisigninpost",
+            "config": {
+              "selectedRegion": "us-east-1",
+              "apiMode": 0,
+              "apiName": "mobile-signin-sample-api",
+              "endpointType": "EDGE",
+              "resourceMode": 0,
+              "resourceName": "signin",
+              "resourcePath": "/signin",
+              "restMethod": "POST",
+              "proxyIntegration": false,
+              "stageMode": 0,
+              "stageName": "prod"
+            }
+          }
+        ],
+        "config": {
+          "runtime": "nodejs10.x",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "cursor": {
+          "lineNumber": 14,
+          "column": 15
+        },
+        "lastUpdated": 1619679717712
+      }
+    },
+    "openFiles": [
+      "b25cfaa4-4d44-4464-83f9-5b8ff3d06549",
+      "ef6a3550-9c0a-44a1-a422-dbb21d93168c"
+    ],
+    "currentFileId": "b25cfaa4-4d44-4464-83f9-5b8ff3d06549",
+    "resources": {
+      "rds-authDatabase": {
+        "name": "rds-authDatabase",
+        "type": "RDS",
+        "config": {
+          "operation": 0,
+          "editMode": true,
+          "rdsInstance": {
+            "rdsEngineType": "mysql",
+            "rdsEdition": "",
+            "rdsInstanceSpec": {
+              "dbInstanceClass": "db.t2.micro",
+              "dbLicenseModel": "general-public-license",
+              "dbEngineVersion": "5.7.19"
+            },
+            "rdsSetting": {
+              "instanceIdentifier": "authDatabase",
+              "masterUsername": "rdsuser",
+              "masterPassword": "12345678"
+            },
+            "rdsDBOptions": {
+              "dbName": "authDatabase",
+              "dbPort": "3306"
+            },
+            "rdsInstanceArn": "",
+            "Host": "process.env.EndPoint_authDatabase",
+            "doesExist": false,
+            "initializationQuery": "CREATE TABLE users\n(\nUserId int NOT NULL AUTO_INCREMENT,\nEmail varchar(255) NOT NULL UNIQUE,\nPassword varchar(255) NOT NULL,\nLastName varchar(255),\nFirstName varchar(255),\nAddress varchar(255),\nPRIMARY KEY (UserId)\n);"
+          },
+          "rdsInstanceResources": [],
+          "mode": 0,
+          "additionalFiles": [],
+          "params": {
+            "query": "INSERT INTO users (Email, Password, LastName, FirstName, Address) VALUES (?, ?, ?, ?, ?);",
+            "inserts": "\"randikanavagamuwa@gmail.com\",\"password\",\"Navagamuwa\",\"Randika\",\"Colombo\""
+          },
+          "isGlobalEditMode": false,
+          "enableInject": true,
+          "isNewFromGlobal": false
+        },
+        "globallyEditable": true
+      },
+      "apigauthApisigninpost": {
+        "name": "apigauthApisigninpost",
+        "type": "API_GATEWAY",
+        "config": {
+          "apiMode": 0,
+          "apiName": "auth-api",
+          "endpointType": "EDGE",
+          "resourceMode": 0,
+          "resourceName": "signin",
+          "resourcePath": "/signin",
+          "restMethod": "POST",
+          "proxyIntegration": false,
+          "stageMode": 0,
+          "stageName": "prod"
+        },
+        "globallyEditable": true
+      },
+      "apigauthApisignuppost": {
+        "name": "apigauthApisignuppost",
+        "type": "API_GATEWAY",
+        "config": {
+          "apiMode": 0,
+          "apiName": "auth-api",
+          "endpointType": "EDGE",
+          "resourceMode": 0,
+          "resourceName": "signup",
+          "resourcePath": "/signup",
+          "restMethod": "POST",
+          "proxyIntegration": false,
+          "stageMode": 0,
+          "stageName": "prod"
+        },
+        "globallyEditable": true
+      }
+    },
+    "customTemplate": {
+      "dialect": "CloudFormation",
+      "definitions": null,
+      "syntax": "JSON"
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "editable": false,
+        "shouldPersist": false,
+        "displayOnly": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "version": "2.644.0",
+          "dev": true,
+          "language": "nodejs"
+        },
+        "slappforge-sdk-aws": {
+          "name": "slappforge-sdk-aws",
+          "version": "0.0.5",
+          "dev": false,
+          "language": "nodejs"
+        }
+      }
+    },
+    "rootNode": "6b62ae10-8931-47a3-baa6-958f52e066f8",
+    "additionalFiles": [],
+    "lambdaId": "b25cfaa4-4d44-4464-83f9-5b8ff3d06549"
+  },
+  "PROJECT_META": {
+    "sigmaVersion": "1.7.0",
+    "projectName": "simple-authenticator-sigma-sample",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "language": "nodejs",
+    "platformRegions": {},
+    "lastSave": 1619679944638
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "simple-authenticator",
+      "url": "https://github.com/surajpadhy/simple-authenticator"
+    }
+  }
+}
